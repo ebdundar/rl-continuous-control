@@ -9,7 +9,7 @@ Trained Double-jointed Arms
  ![](smart-arm.gif)
 
 
-The each arm has 33-dimensional representations and a 4-dimensional action. This representation(state) contains information of an agent such as velocity,rotation,  and ray-based perception of the agent.
+The each arm has 33-dimensional representations and a 4-dimensional action. This representation(state) contains information of an agent such as velocity, angular velocity, rotation, and position of the arm. Actions are values between -1 and +1 to apply torques to two joints.
 
 
 ### Termination Criteria
