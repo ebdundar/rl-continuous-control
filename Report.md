@@ -7,7 +7,7 @@ The agent before training is seen in the left side, and the trained one is in th
 
 Before Training            |  After Training
 :-------------------------:|:-------------------------:
-![](random.gif)            |  ![](smart.gif)
+![](random-arm.gif)            |  ![](smart-arm.gif)
 
 
 ### Environment
@@ -22,7 +22,7 @@ DDPG algorithm is implemented by using **Pytorch** and **Python 3**. The neural 
 The neural network architecture of **Critic** has 2 fully connected layers(32 and 128 units) followed by ReLu actiovations except the last layer which outcomes a Q-value. In this network, representaions of the first hidden layer are concataned to action values of Actor network. Then, they are fed to the second hidden layer. Adam optimizer is selected for both neural networks.
 
   - Replay Buffer  : Our agent takes actions orderly. Therefore, probability of selecting the next action may be affected by the previous one. To eliminate this correlation effect we utilize the replay buffer which is a fixed size buffer to store experiences.
-  - Fixed Q-Targets: Two identical Q-Networks are created for the agent: a local and a target. The local network is softly updated every **n** steps with parameters of the target network. In this way, similar to replay buffer, we can decrease correlation among selection of actions. 
+  - Fixed Targets: Two identical Actor and Critic Networks are created for the agent: a local and a target. The target network is softly updated for 10 times after every 20 steps with parameters of the local network. In this way, similar to replay buffer, we can decrease correlation among selection of actions. 
 
 These techniques are utilized to train out banana collector agent. Due to simplicity of the input state and the network we mentioned above, we prefer to use CPU in order to train our agent.
 
@@ -35,15 +35,15 @@ We used the hyperparameters as the following:
  - LR_ACTOR = 1e-4         # learning rate of the actor 
  - LR_CRITIC = 1e-3        # learning rate of the critic
  - WEIGHT_DECAY = 1e-6     # L2 weight decay
- - SIGMA_DECAY = 0.9       # Decay for noise
- - SIGMA_MIN = 0.001       # Min sigma value of noise
+ - SIGMA_DECAY = 0.95      # Decay for noise
+ - SIGMA_MIN = 0.005       # Min sigma value of noise
   
-Our agent is capable of solving the task after the episode **495**. The result of the DDPG algorithm is the following:  
-  > 
-  
+Our agent is capable of solving the task after the episode **140**. The result of the DDPG algorithm is the following:  
+  > Episode 100	Average Score: 20.13   
+    Episode 140	Average Score: 30.03Environment is solved. 
+    
 The average score value is calculated by averaging scores of averga20 agents in the last 100 episodes.
 ![Rewards](rewards.png)
-
 
 
 ### Conclusion
