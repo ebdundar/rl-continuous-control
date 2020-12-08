@@ -42,7 +42,7 @@ Our agent is capable of solving the task after the episode **140**. The result o
   > Episode 100	Average Score: 20.13   
     Episode 140	Average Score: 30.03Environment is solved. 
     
-The average score value is calculated by averaging scores of averga20 agents in the last 100 episodes.
+The average score value is calculated by averaging average scores of 20 agents in the last 100 episodes.
 ![Rewards](rewards.png)
 
 
