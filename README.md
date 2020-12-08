@@ -6,7 +6,7 @@ This is the second project of Udacity-Deep Reinforcement Learning Course. The ma
 
 Trained Double-jointed Arms
 :-------------------------:
- ![](smart.gif)
+ ![](smart-arm.gif)
 
 
 The each arm has 33-dimensional representations and a 4-dimensional action. This representation(state) contains information of an agent such as velocity,rotation,  and ray-based perception of the agent.
@@ -14,7 +14,7 @@ The each arm has 33-dimensional representations and a 4-dimensional action. This
 
 ### Termination Criteria
 
-The task is episodic. That means an agent should obtain an average score of +13 over 100 consecutive episodes.
+The task is episodic. That means an agent should obtain an average score of +30(average of 20 agents) over 100 consecutive episodes to solve the environment.
 
 ## Let's go!
 At first, we should set up out python environment via following the instructions in [here](https://github.com/udacity/deep-reinforcement-learning#dependencies)
